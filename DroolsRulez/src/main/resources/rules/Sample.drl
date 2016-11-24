@@ -1,0 +1,38 @@
+package com.sample
+ 
+import com.sample.Account;
+ 
+rule "Activate Conditions for averageBalance"
+activation-group "Activate Conditions"
+    when
+        account : Account(averageBalance >= 2000.0, activeConditions != true)
+    then
+        account.setActiveConditions(true);
+end
+
+rule "Activate Conditions for maxIncome"
+activation-group "Activate Conditions"
+    when
+        account : Account(maxIncome >= 600.0, activeConditions != true)
+    then
+        account.setActiveConditions(true);
+end
+
+rule "Activate Conditions for lendingBalance"
+activation-group "Activate Conditions"
+    when
+        account : Account(lendingBalance >= 25000.0, activeConditions != true)
+    then
+
+        account.setActiveConditions(true);
+end
+
+rule "Activate Conditions for investmentsBalance"
+activation-group "Activate Conditions"
+    when
+        account : Account(investmentBalance >= 10000.0, activeConditions != true)
+    then
+
+        account.setActiveConditions(true);
+end
+
